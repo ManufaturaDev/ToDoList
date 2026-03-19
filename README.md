@@ -6,7 +6,7 @@ então em questãao de organização foi mais no susto mesmo.
 
 Não usei nada de IA pera esse crud, utilizei Laravel + Blade + css + js.
 
-Tomei a decisão de desenvolver esse projeto  com todas as camadaas que utilizo para os meus jobs.
+Tomei a decisão de desenvolver esse projeto  com todas as camadas que utilizo para os meus jobs.
 
 //-- vars conexão DB --//
 DB_CONNECTION=pgsql
