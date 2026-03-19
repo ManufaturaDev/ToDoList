@@ -3,14 +3,13 @@
 namespace App\Services\ToDoList;
 
 use App\Services\ToDoList\Contracts\CreateTaskServiceContract;
+use App\Services\Status\Contracts\StatusServiceContract;
 use Illuminate\Contracts\View\View;
-use Illuminate\Database\Eloquent\Collection;
-use App\Models\ToDoList;
 
 class CreateTaskService implements CreateTaskServiceContract
 {
    
-    public function __construct()
+    public function __construct(protected StatusServiceContract $statusSevice)
     {
         //
     }
@@ -20,6 +19,8 @@ class CreateTaskService implements CreateTaskServiceContract
      */
     public function create(): View
     {
-        return view('sport/create');
+        $statusColection = $this->statusSevice->getList();
+            
+        return view('to_do_list/create_task', compact('statusColection'));
     }
 }

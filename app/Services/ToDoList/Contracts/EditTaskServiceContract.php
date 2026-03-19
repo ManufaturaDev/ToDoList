@@ -4,12 +4,12 @@ namespace App\Services\ToDoList\Contracts;
 
 use Illuminate\Contracts\View\View;
 
-interface CreateTaskServiceContract
+interface EditTaskServiceContract
 {
-    /**
+   /**
      * Summary of list
      * 
      * @return View
      */
-    public function create(): View;
+    public function edit(int $sportId): View;
 }

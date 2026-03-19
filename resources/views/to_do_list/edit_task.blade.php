@@ -22,31 +22,34 @@
     </div>
 
     <div class="form_area">
-        <form action="/store" method="post" target="_self">
+        <form action="/update" method="post" target="_self">
             @csrf
             <div class="mb-3">
                 <label for="exampleInputEmail1" class="form-label">Titulo</label>
                 <input type="text" name="title" class="form-control" id="exampleInputEmail1"
-                    aria-describedby="emailHelp" required>
+                    aria-describedby="emailHelp" value="{{ $task->title }}" required>
             </div>
             <div class="mb-3">
                 <label for="exampleInputEmail1" class="form-label">Descrição</label>
                 <textarea class="form-control" name="description" placeholder="Descreva a tarefa"
-                    id="floatingTextarea"></textarea>
+                    id="floatingTextarea">{{ $task->description }}</textarea>
             </div>
             <div class="mb-3">
                 <label for="exampleInputEmail1" class="form-label">Data Prevista</label>
                 <input type="text" name="expected_date" class="form-control" id="datepicker"
-                    aria-describedby="emailHelp">
+                    aria-describedby="emailHelp"
+                    value="{{ implode('/', array_reverse(explode('-', $task->expected_date))) }}">
             </div>
             <div class="mb-3">
                 <label for="exampleInputEmail1" class="form-label">Status</label>
                 <select class="form-select" name="status_id" aria-label="Default select example">
+                    <option value="{{ $task->status->name }}">{{ $task->status->name }}</option>
                     @foreach($statusColection as $status)
                         <option value="{{ $status->id }}">{{ $status->name }}</option>
                     @endforeach
                 </select>
             </div>
+            <input type="hidden" name="id" value="{{ $task->id }}" />
             <button type="submit" class="btn btn-primary">Salvar</button>
         </form>
     </div>

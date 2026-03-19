@@ -27,3 +27,7 @@ body {
     right: 25px;
     top: 25px;
 }
+
+.form_area {
+    width: 50%;
+}

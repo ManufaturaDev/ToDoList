@@ -12,7 +12,7 @@ class StatusSeeder extends Seeder
      */
     public function run(): void
     {
-        $statusAll = ['Concluido', 'Em Andamento', 'Pendente'];
+        $statusAll = ['Aguardando Inicio', 'Em Andamento', 'Concluido', 'Pendente'];
 
         foreach($statusAll as $status){
 

@@ -14,8 +14,8 @@ return new class extends Migration
         Schema::create('to_do_lists', function (Blueprint $table) {
             $table->id();
             $table->string('title');
-            $table->text('description');
-            $table->date('expected_date');
+            $table->text('description')->nullable();
+            $table->date('expected_date')->nullable();
             $table->foreignId('status_id')->references('id')->on('status');
             $table->timestamps();
         });

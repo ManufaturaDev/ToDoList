@@ -31,23 +31,22 @@
             </tr>
         </thead>
         <tbody>
-            <tr>
-                <td>Mark</td>
-                <td>Otto</td>
-                <td>@mdo</td>
-                <td>@mdo</td>
-                <td>
-                    <a href="/edit/" class="icon" data-original-title="Edit">
-                        <img class="icon_size" src="/assets/images/view.png" />
-                    </a>
-                    <a href="/edit/" class="icon" data-original-title="Edit">
-                        <img class="icon_size" src="/assets/images/edit.png" />
-                    </a>
-                    <a href="/edit/" class="icon" data-original-title="Edit">
-                        <img class="icon_size" src="/assets/images/delete.png" />
-                    </a>
-                </td>
-            </tr>
+            @foreach($todolists as $toDoList)
+                <tr>
+                    <td>{{ $toDoList->title }}</td>
+                    <td>{{ $toDoList->description }}</td>
+                    <td>{{ implode('/', array_reverse(explode('-', $toDoList->expected_date)))  }}</td>
+                    <td>{{ $toDoList->status->name }}</td>
+                    <td>
+                        <a href="/edit/{{ $toDoList->id }}" class="icon" data-original-title="Edit">
+                            <img class="icon_size" src="/assets/images/edit.png" />
+                        </a>
+                        <a href="/delete/{{ $toDoList->id }}" class="icon" data-original-title="Edit">
+                            <img class="icon_size" src="/assets/images/delete.png" />
+                        </a>
+                    </td>
+                </tr>
+            @endforeach
         </tbody>
     </table>
 
