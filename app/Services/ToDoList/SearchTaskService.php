@@ -6,6 +6,7 @@ use App\Services\ToDoList\Contracts\SearchTaskServiceContract;
 use Illuminate\Contracts\View\View;
 use Illuminate\Database\Eloquent\Collection;
 use App\Models\ToDoList;
+use Illuminate\Support\Facades\DB;
 use Str;
 
 class SearchTaskService implements SearchTaskServiceContract
@@ -33,6 +34,7 @@ class SearchTaskService implements SearchTaskServiceContract
      */
     private function getList(string $search): Collection
     {
-        return ToDoList::where('title', 'LIKE', '%' . $search . '%')->get();
+        return ToDoList::where(DB::raw('LOWER(title)'), 'LIKE', '%' . strtolower($search) . '%')
+             ->get();
     }
 }
