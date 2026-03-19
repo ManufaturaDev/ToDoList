@@ -1,0 +1,29 @@
+body {
+    margin: 25px;
+    background-color: #fffeae;
+    opacity: 1;
+}
+
+.title {
+    color: steelblue;
+}
+
+.acoes {
+    width: 250px;
+    text-align: center;
+}
+
+.icon {
+    margin-left: 25px;
+}
+
+.icon_size {
+    width: 20px;
+}
+
+.bt_add_task {
+    position: absolute;
+    color: steelblue;
+    right: 25px;
+    top: 25px;
+}
