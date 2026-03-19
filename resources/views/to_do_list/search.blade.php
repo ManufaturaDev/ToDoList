@@ -14,9 +14,9 @@
     <h1 class="title">To Do List</h1>
 
     <div class="bt_add_task">
-        Nova Tarefa
-        <a href="/create" class="icon" data-original-title="Edit">
-            <img class="icon_size" src="/assets/images/create.png" />
+        Lista de Tarefas
+        <a href="/" class="icon" data-original-title="Edit">
+            <img class="icon_size" src="/assets/images/back.png" />
         </a>
     </div>
 

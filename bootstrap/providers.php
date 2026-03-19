@@ -8,5 +8,6 @@ return [
     App\Providers\ToDoList\DeleteTaskServiceProvider::class,
     App\Providers\ToDoList\EditTaskServiceProvider::class,
     App\Providers\ToDoList\UpdateTaskServiceProvider::class,
+    App\Providers\ToDoList\SearchTaskServiceProvider::class,
     App\Providers\Status\StatusServiceProvider::class,
 ];

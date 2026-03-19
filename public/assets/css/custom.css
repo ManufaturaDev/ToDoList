@@ -31,3 +31,9 @@ body {
 .form_area {
     width: 50%;
 }
+
+.busca {
+    position: relative;
+    float: right;
+    width: 30%;
+}

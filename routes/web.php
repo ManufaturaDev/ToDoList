@@ -7,6 +7,7 @@ use App\Http\Controllers\StoreTaskController;
 use App\Http\Controllers\DeleteTaskController;
 use App\Http\Controllers\EditTaskController;
 use App\Http\Controllers\UpdateTaskController;
+use App\Http\Controllers\SearchTaskController;
 
 Route::get('/', ToDoListController::class)->name('to_do_list.list');
 
@@ -19,3 +20,5 @@ Route::get('/delete/{id}', DeleteTaskController::class)->name('to_do_list.delete
 Route::get('/edit/{id}', EditTaskController::class)->name('to_do_list.edit.task');
 
 Route::post('/update', UpdateTaskController::class)->name('to_do_list.update.task');
+
+Route::post('/search', SearchTaskController::class)->name('to_do_list.search.task');
